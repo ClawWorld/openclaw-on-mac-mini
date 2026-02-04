@@ -20,8 +20,8 @@ variable "memory" {
 
 source "qemu" "debian_arm64" {
   vm_name           = var.box_name
-  iso_url           = "https://cdimage.debian.org/debian-cd/current/arm64/iso-cd/debian-${var.debian_version}.0-arm64-netinst.iso"
-  iso_checksum      = "sha256:7e2feab7d5ffd84d38ea2b76b142ac3d0468c401ca952b2a2e2d0a157e2e7abc"
+  iso_url           = "https://cdimage.debian.org/debian-cd/current/arm64/iso-cd/debian-12.8.0-arm64-netinst.iso"
+  iso_checksum      = "sha256:e2d370582f22a3d16b96a5f0adf8af019093d45d5db6f1b708d555bfa738184d"
   output_directory  = "output-debian-${var.debian_version}-arm64"
   shutdown_command  = "echo 'vagrant' | sudo -S shutdown -h now"
   ssh_username      = "vagrant"
@@ -37,7 +37,7 @@ source "qemu" "debian_arm64" {
     "debian-installer/locale=en_US.UTF-8 <wait>",
     "kbd-chooser/method=us <wait>",
     "keyboard-configuration/xkb-keymap=us <wait>",
-    "netcfg/get_hostname=${var.box_name} <wait>",
+    "netcfg/get_hostname=openclaw-debian-bookworm-arm64 <wait>",
     "netcfg/get_domain=vagrantup.com <wait>",
     "fb=false <wait>",
     "debconf/frontend=noninteractive <wait>",
