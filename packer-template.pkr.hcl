@@ -20,8 +20,8 @@ variable "memory" {
 
 source "qemu" "debian_arm64" {
   vm_name           = var.box_name
-  iso_url           = "https://cdimage.debian.org/debian-cd/current/arm64/iso-cd/debian-12-generic-arm64-netinst.iso"
-  iso_checksum      = "file:https://cdimage.debian.org/debian-cd/current/arm64/iso-cd/SHA256SUMS"
+  iso_url           = "https://cdimage.debian.org/debian-cd/current/arm64/iso-cd/debian-12-generic.installer-arm64-netinst.iso"
+  iso_checksum      = "sha256:9979409a341b5b47c3e49f1d9103b6d85c08d2eeed083540940565a92815c163"
   output_directory  = "output-debian-${var.debian_version}-arm64"
   shutdown_command  = "echo 'vagrant' | sudo -S shutdown -h now"
   ssh_username      = "vagrant"
